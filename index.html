@@ -3,20 +3,99 @@
 <meta charset="UTF-8">
 <title>Naruto Tracker</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
 
 <style>
+    #first{
+        background-color: black;
+        height: 800px;
+        color: aquamarine;
+    }
+    #second{
+        color: aqua;
+        height: 800px;
+    }
+
+    button{
+        width: 50px;
+        padding: 10px;
+    }
+    #ep1{
+        background-color: aqua;
+    }
 </style>
 
 
-<script src="">
-</script>
+
+
+    
 
 
 <body>
-<h1>Hello</h1>
+<h2>Hello</h2>
+<h2>Information about Naruto</h2>
+<div class="container text-center">
+    <div class="row align-items-start">
+      <div class="col">
+        <img src="images/pic.webp" alt="Naruto" style="height:50px;">
+
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+Season 1            </a>
+            
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body" id = try1>
+                 <!-- <button id="ep1" onclick="alreadyWatched()">EP 1</button>  -->
+            </div>
+          </div> 
+          
+        <p>One of three columns</p>
+      </div>
+      <div class="col">
+        <img src="images/pic.webp" alt="Naruto" style="height:50px;">
+        <p>One of three columns</p>
+      </div>
+      <div class="col">
+        <img src="images/pic.webp" alt="Naruto" style="height:50px;">
+        <p>One of three columns</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="more"></div>
 
 
+
+  <script src="https://unpkg.com/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+  <script> 
+  //variables
+  let x = 0;
+  let narutoS1 = [];
+  while (x <= 26){
+      narutoS1.push(x);
+      x = x + 1;
+  }
+  
+  
+  console.log(narutoS1);
+  
+  function please () {
+    for (var i = 1; i < narutoS1.length; i++) {
+     
+      document.getElementById("try1").innerHTML += "<button>" + "EP " + narutoS1[i] + "</button>";
+    }
+  }
+  
+  please();
+  
+     function alreadyWatched(){
+          console.log("Hi");
+          document.getElementById("ep1").style.backgroundColor='#911';
+      }
+  
+  </script>
 </body>
 </html>

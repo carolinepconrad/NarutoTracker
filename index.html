@@ -72,9 +72,12 @@ body {
 
   .buttonPosition{
    display: inline;
+   padding: 8px;
+   padding-top: 12px;
+   padding-bottom:12px;
    position: fixed; 
    bottom: 20px; 
-    right: 30px; 
+    right: 34px; 
     z-index: 99;
   }
   button{
@@ -96,8 +99,19 @@ body {
 
 
 
-    
+ <!-- off canvas from bootstrap-->   
+ <button  class="btn btn-outline-light buttonPosition" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" style="  display: inline;
+ position: fixed; bottom: 70px; right: 30px; z-index: 99; padding: 12px;">STATISTICS</button>
 
+ <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+   <div class="offcanvas-header">
+     <h5 class="offcanvas-title" id="offcanvasScrollingLabel>STATISTICS</h5>
+     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+   </div>
+   <div class="offcanvas-body">
+     <p>Try scrolling the rest of the page to see this option in action.</p>
+   </div>
+ </div>
 
 <body style="font-family: monospace;">
   <div style="margin-bottom: 700px;">
@@ -133,7 +147,7 @@ body {
   <p id="try3"></p>
 </div>
 
-  <a class="btn btn-outline-light buttonPosition" id="buttonPosition" href="#backTop" role="button">Back to Top</a>
+  <a class="btn btn-outline-light buttonPosition" id="buttonPosition" href="#backTop" role="button">BACK TO TOP</a>
 
 
 

@@ -93,26 +93,9 @@ body {
 </style>
 
 
-    
 
 
-
-
-
- <!-- off canvas from bootstrap-->   
- <button  class="btn btn-outline-light buttonPosition" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" style="  display: inline;
- position: fixed; bottom: 70px; right: 30px; z-index: 99; padding: 12px;">STATISTICS</button>
-
- <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-   <div class="offcanvas-header">
-     <h5 class="offcanvas-title" id="offcanvasScrollingLabel>STATISTICS</h5>
-     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-   </div>
-   <div class="offcanvas-body">
-     <p>Try scrolling the rest of the page to see this option in action.</p>
-   </div>
- </div>
-
+ 
 <body style="font-family: monospace;">
   <div style="margin-bottom: 700px;">
     <p id = "backTop" style="color: aliceblue; padding-top: 250px;">Click on the series you would like to track.</p>
@@ -150,23 +133,31 @@ body {
   <a class="btn btn-outline-light buttonPosition" id="buttonPosition" href="#backTop" role="button">BACK TO TOP</a>
 
 
+<!-- STATISTICS-->   
+   <!-- off- canvas from bootstrap-->   
+ <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+   <div class="offcanvas-header">
+     <h5 class="offcanvas-title" id="offcanvasScrollingLabel>STATISTICS</h5>
+     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+   </div>
+   <div class="offcanvas-body">
+     <p>Try scrolling the rest of the page to see this option in action.</p>
+   </div>
+ </div>
+
+   <!-- button from bootstrap-->   
+ <button  class="btn btn-outline-light buttonPosition" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" style="  display: inline;
+ position: fixed; bottom: 70px; right: 30px; z-index: 99; padding: 12px;">STATISTICS</button>
 
 
 
-
-
-
-
-
-
-  
 
 
 
   <script src="https://unpkg.com/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://unpkg.com/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
   <script> 
-  //variables
+  //VARIABLES
   let x = 1;
   let y = 1;
   let z = 1;
@@ -176,13 +167,23 @@ body {
   let shippudenS1 = [];
   let borutoS1 = [];
 
-  //to create array
+  //FOR EACH SEASONS EPS
   while (x <= 220){
       narutoS1.push(x);
       x = x + 1;
   }
+  while (y <= 500){
+      shippudenS1.push(y);
+      y = y + 1;
+  }
+  console.log(y)
 
-    
+while (z <= 293){
+      borutoS1.push(z);
+      z = z + 1;
+  }
+
+  //CREATING BUTTONS  
   function pleaseWork () {
   for (var i = 0; i < narutoS1.length; i++) {
     const button = document.createElement("button");
@@ -196,16 +197,8 @@ body {
     };
     document.getElementById("try1").appendChild(button);
   }
-
-
-
-  //SHIPPUDEN CODE
-  while (y <= 500){
-      shippudenS1.push(y);
-      y = y + 1;
   }
-  console.log(y)
-}
+
 function pleaseWork2 () {
   for (var i = 0; i < shippudenS1.length; i++) {
     const button = document.createElement("button");
@@ -221,12 +214,6 @@ function pleaseWork2 () {
     document.getElementById("try2").appendChild(button);
   }
 }
-
-//BORUTO
-while (z <= 293){
-      borutoS1.push(z);
-      z = z + 1;
-  }
   function pleaseWork3 () {
   for (var i = 0; i < borutoS1.length; i++) {
     const button = document.createElement("button");
@@ -242,10 +229,7 @@ while (z <= 293){
     document.getElementById("try3").appendChild(button);
   }
 }
-//console.log(totalWatched);
 
-
-  
   pleaseWork();
   pleaseWork2();
   pleaseWork3();

@@ -53,6 +53,17 @@ body {
    
   }
 
+  #theSecond{
+    background-color: #0d0d0d;
+    padding: 300px;
+   
+  }
+  #theThird{
+    background-color: #0d0d0d;
+    padding: 300px;
+   
+  }
+
   #topButtons{
     color: aliceblue;
     text-decoration: none; 
@@ -71,7 +82,7 @@ body {
     padding: 10px;
     border-radius: 12px;
     border: none;
-    background-color: hsl(340deg 100% 32%);
+    background-color:#414368;
     color: white;
     font-size: 1rem;
     cursor: pointer;
@@ -114,8 +125,13 @@ body {
 
 </div>
 
-  <p id="theSecond">HI</p>
-  <p id="theThird">HI</p>
+<div id="theSecond">
+    <p id="try2"></p>
+  </div>
+
+<div id="theThird">
+  <p id="try3"></p>
+</div>
 
   <a class="btn btn-outline-light buttonPosition" id="buttonPosition" href="#backTop" role="button">Back to Top</a>
 
@@ -138,38 +154,88 @@ body {
   <script> 
   //variables
   let x = 1;
-  let totalWatched = 3;
+  let y = 1;
+  let z = 1;
+  let totalWatched = 0;
   let totalEp = 220;
   let narutoS1 = [];
+  let shippudenS1 = [];
+  let borutoS1 = [];
 
   //to create array
   while (x <= 220){
       narutoS1.push(x);
       x = x + 1;
   }
-  
-  
-  console.log(narutoS1);
-  
+
+    
   function pleaseWork () {
   for (var i = 0; i < narutoS1.length; i++) {
     const button = document.createElement("button");
     button.innerText = "EP" + narutoS1[i];
     button.style.width = "140px";
     button.onclick = function() {
-      button.style.backgroundColor = "#40e0d0";
+      button.style.backgroundColor = "#161616";
       totalWatched += 1;
       console.log(totalWatched);
       console.log(totalWatched/totalEp)
     };
     document.getElementById("try1").appendChild(button);
   }
+
+
+
+  //SHIPPUDEN CODE
+  while (y <= 500){
+      shippudenS1.push(y);
+      y = y + 1;
+  }
+  console.log(y)
 }
-console.log(totalWatched);
+function pleaseWork2 () {
+  for (var i = 0; i < shippudenS1.length; i++) {
+    const button = document.createElement("button");
+    button.innerText = "EP" + shippudenS1[i];
+    button.style.width = "140px";
+    button.style.backgroundColor = "#FE9677";
+
+    button.onclick = function() {
+      button.style.backgroundColor = "#161616";
+      totalWatched += 1;
+    
+    };
+    document.getElementById("try2").appendChild(button);
+  }
+}
+
+//BORUTO
+while (z <= 293){
+      borutoS1.push(z);
+      z = z + 1;
+  }
+  function pleaseWork3 () {
+  for (var i = 0; i < borutoS1.length; i++) {
+    const button = document.createElement("button");
+    button.innerText = "EP" + borutoS1[i];
+    button.style.width = "140px";
+    button.style.backgroundColor = "#98406";
+
+    button.onclick = function() {
+      button.style.backgroundColor = "#161616";
+      totalWatched += 1;
+    
+    };
+    document.getElementById("try3").appendChild(button);
+  }
+}
+//console.log(totalWatched);
 
 
   
   pleaseWork();
+  pleaseWork2();
+  pleaseWork3();
+
   </script>
 </body>
 </html>

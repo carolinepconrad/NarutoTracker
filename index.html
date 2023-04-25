@@ -7,24 +7,80 @@
 
 
 <style>
-    #first{
-        background-color: black;
-        height: 800px;
-        color: aquamarine;
-    }
-    #second{
-        color: aqua;
-        height: 800px;
-    }
+/* 3D Button Got from https://www.joshwcomeau.com/animation/3d-button/ */
+ 
+  .pushable {
+    background: hsl(340deg 100% 32%);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    margin-top: 10px;
+    position: static;
 
-    button{
-        width: 50px;
-        padding: 10px;
-    }
-    #ep1{
-        background-color: aqua;
-    }
+  }
+  .front {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: hsl(345deg 100% 47%);
+    color: white;
+    transform: translateY(-6px);
+  }
+
+body {
+    margin:50px 0; 
+    padding:0;
+    text-align:center;
+    background-color:#0d0d0d;
+}
+
+#Content {
+    width:500px;
+    margin:0 auto;
+    text-align:left;
+    padding:50px;
+}
+
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
+  #theFirst{
+    background-color: #0d0d0d;
+    padding: 300px;
+   
+  }
+
+  #topButtons{
+    color: aliceblue;
+    text-decoration: none; 
+    width: 50px; 
+  }
+
+  .buttonPosition{
+   display: inline;
+   position: fixed; 
+   bottom: 20px; 
+    right: 30px; 
+    z-index: 99;
+  }
+  button{
+    margin: 5px;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    background-color: hsl(340deg 100% 32%);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+  }
 </style>
+
+
+    
+
 
 
 
@@ -32,39 +88,48 @@
     
 
 
-<body>
-<h2>Hello</h2>
-<h2>Information about Naruto</h2>
-<div class="container text-center">
-    <div class="row align-items-start">
-      <div class="col">
-        <img src="images/pic.webp" alt="Naruto" style="height:50px;">
+<body style="font-family: monospace;">
+  <div style="margin-bottom: 700px;">
+    <p id = "backTop" style="color: aliceblue; padding-top: 250px;">Click on the series you would like to track.</p>
+  <button  class="pushable">
+    <span class="front" href="#backTop" role="button">
+      <a href="#theFirst" id="topButtons"> NARUTO</a>
+    </span>
+  </button>
 
-        <p>
-            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-Season 1            </a>
-            
-          </p>
-          <div class="collapse" id="collapseExample">
-            <div class="card card-body" id = try1>
-                 <!-- <button id="ep1" onclick="alreadyWatched()">EP 1</button>  -->
-            </div>
-          </div> 
-          
-        <p>One of three columns</p>
-      </div>
-      <div class="col">
-        <img src="images/pic.webp" alt="Naruto" style="height:50px;">
-        <p>One of three columns</p>
-      </div>
-      <div class="col">
-        <img src="images/pic.webp" alt="Naruto" style="height:50px;">
-        <p>One of three columns</p>
-      </div>
-    </div>
-  </div>
+  <button class="pushable">
+    <span class="front">
+      <a href="#theSecond" id="topButtons"> SHIPPUDEN</a>
+    </span>
+  </button>
+  <button class="pushable">
+    <span class="front">
+      <a href="#theThird" id="topButtons"> BORUTO</a>
+    </span>
+  </button>
+</div>
 
-  <div id="more"></div>
+<div id="theFirst"> 
+  <p id="try1"></p>
+
+</div>
+
+  <p id="theSecond">HI</p>
+  <p id="theThird">HI</p>
+
+  <a class="btn btn-outline-light buttonPosition" id="buttonPosition" href="#backTop" role="button">Back to Top</a>
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 
@@ -72,9 +137,13 @@ Season 1            </a>
   <script src="https://unpkg.com/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
   <script> 
   //variables
-  let x = 0;
+  let x = 1;
+  let totalWatched = 3;
+  let totalEp = 220;
   let narutoS1 = [];
-  while (x <= 26){
+
+  //to create array
+  while (x <= 220){
       narutoS1.push(x);
       x = x + 1;
   }
@@ -82,20 +151,25 @@ Season 1            </a>
   
   console.log(narutoS1);
   
-  function please () {
-    for (var i = 1; i < narutoS1.length; i++) {
-     
-      document.getElementById("try1").innerHTML += "<button>" + "EP " + narutoS1[i] + "</button>";
-    }
+  function pleaseWork () {
+  for (var i = 0; i < narutoS1.length; i++) {
+    const button = document.createElement("button");
+    button.innerText = "EP" + narutoS1[i];
+    button.style.width = "140px";
+    button.onclick = function() {
+      button.style.backgroundColor = "#40e0d0";
+      totalWatched += 1;
+      console.log(totalWatched);
+      console.log(totalWatched/totalEp)
+    };
+    document.getElementById("try1").appendChild(button);
   }
+}
+console.log(totalWatched);
+
+
   
-  please();
-  
-     function alreadyWatched(){
-          console.log("Hi");
-          document.getElementById("ep1").style.backgroundColor='#911';
-      }
-  
+  pleaseWork();
   </script>
 </body>
 </html>

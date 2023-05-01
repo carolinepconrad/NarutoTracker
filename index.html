@@ -98,6 +98,7 @@ body {
  
 <body style="font-family: monospace;">
   <div style="margin-bottom: 700px;">
+   
     <p id = "backTop" style="color: aliceblue; padding-top: 250px;">Click on the series you would like to track.</p>
   <button  class="pushable">
     <span class="front" href="#backTop" role="button">
@@ -118,15 +119,17 @@ body {
 </div>
 
 <div id="theFirst"> 
+  <h3 style="color:white;">-◎◎◎ NARUTO ◎◎◎-</h3>
   <p id="try1"></p>
 
 </div>
-
 <div id="theSecond">
+  <h3 style="color:white">-◎◎◎ SHIPPUDEN ◎◎◎-</h3>
     <p id="try2"></p>
   </div>
 
 <div id="theThird">
+  <h3 style="color:white">-◎◎◎ BORUTO ◎◎◎-</h3>
   <p id="try3"></p>
 </div>
 
@@ -141,31 +144,71 @@ body {
      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
    </div>
    <div class="offcanvas-body">
-     <p>Try scrolling the rest of the page to see this option in action.</p>
+     <h3  style="margin-bottom: 50px; font-weight: bold;">-◎◎◎ STATISTICS ◎◎◎-</h3>
+     <!--<p style="margin-bottom: 50px;"> --------------------------------- </p> -->
+     <div style="text-align: left;">
+      <div style="margin-bottom: 50px">
+        <h3 style="font-weight: bold;">TOTAL</h3>
+        <div style="margin-left: 30px;">
+          <p id ="displayPercentage" style="margin-bottom: -2px;">- percentage watched: 0.00% </p>
+          <p id ="fractTotal">- 0 / 1013</p>
+        </div>
+      </div>
+      <div style="margin-bottom: 50px;">
+        <h3 style="font-weight: bold;">NARUTO</h3>
+        <div style="margin-left: 30px;">
+          <p id="nPercent" style="margin-bottom: -2px;"> - percentage watched: 0.00%</p>
+          <p id ="fractTotal1">- 0 / 220</p>
+          </div>
+      </div>
+      <div style="margin-bottom: 50px;">
+        <h3 style="font-weight: bold;">SHIPPUDEN</h3>
+        <div style="margin-left: 30px;">
+          <p id="sPercent" style="margin-bottom: -2px;">- percentage watched: 0.00%</p>
+          <p id="fractTotal2">- 0/500</p>
+        </div>
+        </div>
+        <div style="margin-bottom: 50px;">
+          <h3 style="font-weight: bold;">BORUTO</h3>
+          <div style="margin-left: 30px;">
+          <p id="bPercent" style="margin-bottom: -2px;"">- percentage watched: 0.00%</p>
+          <p id="fractTotal3">- 0/293</p>
+          </div>
+      </div>
+
    </div>
- </div>
+    </div>
+   </div>
 
    <!-- button from bootstrap-->   
  <button  class="btn btn-outline-light buttonPosition" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" style="  display: inline;
  position: fixed; bottom: 70px; right: 30px; z-index: 99; padding: 12px;">STATISTICS</button>
 
 
-
+<!--<IMG SRC="anime.gif">-->
 
 
 
   <script src="https://unpkg.com/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://unpkg.com/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
   <script> 
+  alert("This website is designed to keep track of your progress when watching the Naruto series shows. ");
   //VARIABLES
   let x = 1;
   let y = 1;
   let z = 1;
+  let narutoToT = 0; //220
+  let shipToT = 0; //500
+  let borToT = 0; //293
+  let thePercentage = 0;
   let totalWatched = 0;
-  let totalEp = 220;
+  let totalEp = 1013;
   let narutoS1 = [];
   let shippudenS1 = [];
   let borutoS1 = [];
+
+
+  
 
   //FOR EACH SEASONS EPS
   while (x <= 220){
@@ -178,11 +221,12 @@ body {
   }
   console.log(y)
 
-while (z <= 293){
+  while (z <= 293){
       borutoS1.push(z);
       z = z + 1;
   }
 
+  
   //CREATING BUTTONS  
   function pleaseWork () {
   for (var i = 0; i < narutoS1.length; i++) {
@@ -192,10 +236,23 @@ while (z <= 293){
     button.onclick = function() {
       button.style.backgroundColor = "#161616";
       totalWatched += 1;
+      narutoToT +=1;
+      console.log(narutoToT);
+      thePercentage =(totalWatched/totalEp);
       console.log(totalWatched);
-      console.log(totalWatched/totalEp)
+      console.log(thePercentage);
+      document.getElementById("displayPercentage").innerHTML = "percentage watched: " + (thePercentage).toFixed(2) + "%";
+      document.getElementById("fractTotal").innerHTML = (totalWatched) + "/" + (totalEp);
+      narutoPercent = (narutoToT)/220;
+      document.getElementById("nPercent").innerHTML = " percentage watched : " + (narutoPercent).toFixed(2) + "%";
+      document.getElementById("fractTotal1").innerHTML = (narutoToT) + "/" + "220";
+
+
     };
     document.getElementById("try1").appendChild(button);
+
+    
+    
   }
   }
 
@@ -209,6 +266,17 @@ function pleaseWork2 () {
     button.onclick = function() {
       button.style.backgroundColor = "#161616";
       totalWatched += 1;
+      shipToT +=1;
+      thePercentage =(totalWatched/totalEp);
+      document.getElementById("displayPercentage").innerHTML = "percentage watched: " + (thePercentage).toFixed(2) + "%";
+      document.getElementById("fractTotal").innerHTML = (totalWatched) + "/" + (totalEp);
+      shippudenPercent = (shipToT)/500;
+      console.log(shippudenPercent);
+      document.getElementById("fractTotal2").innerHTML = (shipToT) + "/" + "500";
+
+      document.getElementById("sPercent").innerHTML = " percentage watched: " + (shippudenPercent).toFixed(2) + "%";
+
+
     
     };
     document.getElementById("try2").appendChild(button);
@@ -219,16 +287,34 @@ function pleaseWork2 () {
     const button = document.createElement("button");
     button.innerText = "EP" + borutoS1[i];
     button.style.width = "140px";
-    button.style.backgroundColor = "#98406";
+    button.style.backgroundColor = "#984063";
 
     button.onclick = function() {
       button.style.backgroundColor = "#161616";
       totalWatched += 1;
+      borToT +=1;
+      thePercentage =(totalWatched/totalEp);
+      borutoPercent = (borToT/293);
+      console.log(borutoPercent);
+      console.log(totalWatched);
+      document.getElementById("displayPercentage").innerHTML = "percentage watched: " + (thePercentage).toFixed(2) + "%";
+      document.getElementById("fractTotal").innerHTML = (totalWatched) + "/" + (totalEp);
+
+      document.getElementById("bPercent").innerHTML = "percentage watched: " + (borutoPercent).toFixed(2) + "%";
+      document.getElementById("fractTotal3").innerHTML = (borToT) + "/" + "293";
+
+
     
     };
     document.getElementById("try3").appendChild(button);
+
   }
 }
+thePercentage = (totalWatched/totalEp)
+
+
+
+
 
   pleaseWork();
   pleaseWork2();

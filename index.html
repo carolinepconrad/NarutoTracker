@@ -1,3 +1,6 @@
+<!-- Caroline Conrad [Spring 2023, CIS 231, Cairn University]
+      --This Website is design to be used for tracking the progress as you watch Naruto Series. -- -->
+
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
@@ -8,7 +11,6 @@
 
 <style>
 /* 3D Button Got from https://www.joshwcomeau.com/animation/3d-button/ */
- 
   .pushable {
     background: hsl(340deg 100% 32%);
     border-radius: 12px;
@@ -30,6 +32,7 @@
     transform: translateY(-6px);
   }
 
+
 body {
     margin:50px 0; 
     padding:0;
@@ -43,9 +46,10 @@ body {
     text-align:left;
     padding:50px;
 }
-
   .pushable:active .front {
     transform: translateY(-2px);
+
+   /* style different sections of the website */ 
   }
   #theFirst{
     background-color: #0d0d0d;
@@ -69,6 +73,8 @@ body {
     text-decoration: none; 
     width: 50px; 
   }
+
+     /* style two buttons at the bottom right */ 
 
   .buttonPosition{
    display: inline;
@@ -101,8 +107,9 @@ body {
    
     <p id = "backTop" style="color: aliceblue; padding-top: 250px;">Click on the series you would like to track.</p>
   <button  class="pushable">
+
     <span class="front" href="#backTop" role="button">
-      <a href="#theFirst" id="topButtons"> NARUTO</a>
+      <a href="#theFirst" id="topButtons"> NARUTO</a> <!-- added functioning button on top of 3D Button -->
     </span>
   </button>
 
@@ -118,6 +125,7 @@ body {
   </button>
 </div>
 
+<!-- The different sections with the buttons & titles-->
 <div id="theFirst"> 
   <h3 style="color:white;">-◎◎◎ NARUTO ◎◎◎-</h3>
   <p id="try1"></p>
@@ -133,10 +141,13 @@ body {
   <p id="try3"></p>
 </div>
 
+   <!-- buttons from bootstrap-->   
+   <button  class="btn btn-outline-light buttonPosition" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" style="  display: inline;
+   position: fixed; bottom: 70px; right: 30px; z-index: 99; padding: 12px;">STATISTICS</button>
   <a class="btn btn-outline-light buttonPosition" id="buttonPosition" href="#backTop" role="button">BACK TO TOP</a>
 
 
-<!-- STATISTICS-->   
+<!-- STATISTICS button + displaying the data -->   
    <!-- off- canvas from bootstrap-->   
  <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
    <div class="offcanvas-header">
@@ -180,19 +191,11 @@ body {
     </div>
    </div>
 
-   <!-- button from bootstrap-->   
- <button  class="btn btn-outline-light buttonPosition" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" style="  display: inline;
- position: fixed; bottom: 70px; right: 30px; z-index: 99; padding: 12px;">STATISTICS</button>
-
-
-<!--<IMG SRC="anime.gif">-->
-
 
 
   <script src="https://unpkg.com/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://unpkg.com/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
   <script> 
-  alert("This website is designed to keep track of your progress when watching the Naruto series shows. ");
   //VARIABLES
   let x = 1;
   let y = 1;
@@ -203,7 +206,7 @@ body {
   let thePercentage = 0;
   let totalWatched = 0;
   let totalEp = 1013;
-  let narutoS1 = [];
+  let narutoS1 = []; 
   let shippudenS1 = [];
   let borutoS1 = [];
 
@@ -227,7 +230,7 @@ body {
   }
 
   
-  //CREATING BUTTONS  
+  //CREATING THE BUTTONS  + DISPLAYING THE DATA 
   function pleaseWork () {
   for (var i = 0; i < narutoS1.length; i++) {
     const button = document.createElement("button");

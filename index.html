@@ -168,7 +168,7 @@ body {
       <div style="margin-bottom: 50px;">
         <h3 style="font-weight: bold;">NARUTO</h3>
         <div style="margin-left: 30px;">
-          <p id="nPercent" style="margin-bottom: -2px;"> - percentage watched: 0.00%</p>
+          <p id="nPercent" style="margin-bottom: -2px;">- percentage watched: 0.00%</p>
           <p id ="fractTotal1">- 0 / 220</p>
           </div>
       </div>
@@ -244,11 +244,11 @@ body {
       thePercentage =(totalWatched/totalEp);
       console.log(totalWatched);
       console.log(thePercentage);
-      document.getElementById("displayPercentage").innerHTML = "percentage watched: " + (thePercentage).toFixed(2) + "%";
-      document.getElementById("fractTotal").innerHTML = (totalWatched) + "/" + (totalEp);
+      document.getElementById("displayPercentage").innerHTML = "- percentage watched: " + (thePercentage).toFixed(2) + "%";
+      document.getElementById("fractTotal").innerHTML = "-" + (totalWatched) + "/" + (totalEp);
       narutoPercent = (narutoToT)/220;
-      document.getElementById("nPercent").innerHTML = " percentage watched : " + (narutoPercent).toFixed(2) + "%";
-      document.getElementById("fractTotal1").innerHTML = (narutoToT) + "/" + "220";
+      document.getElementById("nPercent").innerHTML = "- percentage watched: " + (narutoPercent).toFixed(2) + "%";
+      document.getElementById("fractTotal1").innerHTML ="-" +  (narutoToT) + "/" + "220";
 
 
     };
@@ -271,13 +271,13 @@ function pleaseWork2 () {
       totalWatched += 1;
       shipToT +=1;
       thePercentage =(totalWatched/totalEp);
-      document.getElementById("displayPercentage").innerHTML = "percentage watched: " + (thePercentage).toFixed(2) + "%";
-      document.getElementById("fractTotal").innerHTML = (totalWatched) + "/" + (totalEp);
+      document.getElementById("displayPercentage").innerHTML = "- percentage watched: " + (thePercentage).toFixed(2) + "%";
+      document.getElementById("fractTotal").innerHTML ="-" +  (totalWatched) + "/" + (totalEp);
       shippudenPercent = (shipToT)/500;
       console.log(shippudenPercent);
-      document.getElementById("fractTotal2").innerHTML = (shipToT) + "/" + "500";
+      document.getElementById("fractTotal2").innerHTML ="-" +  (shipToT) + "/" + "500";
 
-      document.getElementById("sPercent").innerHTML = " percentage watched: " + (shippudenPercent).toFixed(2) + "%";
+      document.getElementById("sPercent").innerHTML = "- percentage watched: " + (shippudenPercent).toFixed(2) + "%";
 
 
     
@@ -300,11 +300,11 @@ function pleaseWork2 () {
       borutoPercent = (borToT/293);
       console.log(borutoPercent);
       console.log(totalWatched);
-      document.getElementById("displayPercentage").innerHTML = "percentage watched: " + (thePercentage).toFixed(2) + "%";
-      document.getElementById("fractTotal").innerHTML = (totalWatched) + "/" + (totalEp);
+      document.getElementById("displayPercentage").innerHTML = "- percentage watched: " + (thePercentage).toFixed(2) + "%";
+      document.getElementById("fractTotal").innerHTML = "-" + (totalWatched) + "/" + (totalEp);
 
-      document.getElementById("bPercent").innerHTML = "percentage watched: " + (borutoPercent).toFixed(2) + "%";
-      document.getElementById("fractTotal3").innerHTML = (borToT) + "/" + "293";
+      document.getElementById("bPercent").innerHTML = "- percentage watched: " + (borutoPercent).toFixed(2) + "%";
+      document.getElementById("fractTotal3").innerHTML = "-" + (borToT) + "/" + "293";
 
 
     
